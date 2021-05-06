@@ -8,3 +8,57 @@
 * {
     box-sizing:border-box;
 }
+
+.overall{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  background-image: url('https://www.coswick.com/wp-content/uploads/2016/07/select_milk_ch-2.jpg');
+}
+
+.tableDrawing{
+  height: 800px;
+  width: 1200px;
+}
+
+.userThrows{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  bottom: 150px;
+  right: 0px;
+  align-items: center;
+}
+
+.userResults{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  bottom: 130px;
+  right: 0px;
+  align-items: center;
+  color: white;
+  background-color: brown;
+  opacity: 0.8;
+  border-radius: 0%;
+  text-align: center;
+}
+
+#playButton{
+  align-items: center;
+}
+
+.rules{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  bottom: 700px;
+  right: 0px;
+  align-items: center;
+  color: white;
+  background-color: brown;
+  opacity: 0.8;
+  border-radius: 0%;
+  text-align: center;
+}

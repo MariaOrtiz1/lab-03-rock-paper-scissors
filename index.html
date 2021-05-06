@@ -12,17 +12,36 @@
     <title>Document</title>
 </head>
 
-<body>
+<body class="overall">
     <div id="opponentThrows"></div>
-    <input type="radio" id="boulderButton" name="userPick">boulder 
-    <input type="radio" id="parchmentButton" name="userPick">parchment 
-    <input type="radio" id="shearsButton" name="userPick">shears
-    <button id="playButton"></button>
+    <img src="./assets/table.jfif" alt="drawing of table with gold coins" class="tableDrawing">
+    <p class="rules"> After a long and tiring day, you and your party decide to celebrate a bit and relax at a tavern!
+        <br>After eating and drinking your hearts out, silence falls over your party at the sight of the tab.
+        <br> "How about boulder, parchment, shears?" one of your friends chimes in, "Loser has to pay for tonight's feast!"
+    </p>
+    <section class="userThrows">
+        <input type="radio" id="boulderButton" name="userPick" value="Boulder">BOULDER
+        <img src="./assets/boulderDrawing.png" height="200px" width="200px">
+
+        <input type="radio" id="parchmentButton" name="userPick" value="Parchment">PARCHMENT
+        <img src="./assets/parchmentDrawing.png" height="200px" width="200px">
+
+        <input type="radio" id="shearsButton" name="userPick" value="Shears">SHEARS
+        <img src="assets/shearsDrawing.png" height="200px" width="200px">
+    </section>
+    <section class="userResults">
+        <button id="playButton">1 2 3 go!</button>
+    <br>
     <div id="totalWins"></div>
+    <br>
     <div id="totalLosses"></div>
+    <br>
     <div id="totalPlays"></div>
+    <br>
     <div id="totalDraws"></div>
+    <br>
     <div id="results"></div>
+</section>
     <script type="module" src="./app.js"></script>
     <script type="module" src="./utils.js"></script>
 </body>

@@ -1,10 +1,10 @@
 // import functions and grab DOM elements
-import { opponentPick, rockPaperScissors } from './utils.js';
+import { opponentPick } from './utils.js';
+import { rockPaperScissors } from './utils.js';
 
-const oppponentThrowsDisplay = document.querySelector('#opponentThrows');
 const playButtonClick = document.querySelector('#playButton');
 const totalWinsDisplay = document.querySelector('#totalWins');
-const totalLossesDisplay = document.querySelector('#totalLosses')
+const totalLossesDisplay = document.querySelector('#totalLosses');
 const totalPlaysDisplay = document.querySelector('#totalPlays');
 const totalDrawsDisplay = document.querySelector('#totalDraws');
 const resultsDisplay = document.querySelector('#results');
@@ -23,7 +23,9 @@ playButtonClick.addEventListener('click', () => {
     let opponentChoice = Math.ceil(Math.random() * 3);
     if (rockPaperScissors(userChoice, opponentPick(opponentChoice)) === 'won') {
         totalPlaysResults++;
+
         totalWinsResults++;
+
         totalPlaysDisplay.textContent = `Total Matches: ${totalPlaysResults}!`;
         totalWinsDisplay.textContent = `Total Victories: ${totalWinsResults}!`;
         totalLossesDisplay.textContent = `Total Defeats: ${totalLossesResults}!`;
@@ -32,7 +34,9 @@ playButtonClick.addEventListener('click', () => {
 
     } else if (rockPaperScissors(userChoice, opponentPick(opponentChoice)) === 'lost') {
         totalPlaysResults++;
+
         totalLossesResults++;
+
         totalPlaysDisplay.textContent = `Total Matches: ${totalPlaysResults}!`;
         totalWinsDisplay.textContent = `Total Victories: ${totalWinsResults}!`;
         totalLossesDisplay.textContent = `Total Defeats: ${totalLossesResults}!`;
@@ -41,7 +45,9 @@ playButtonClick.addEventListener('click', () => {
 
     } else if (rockPaperScissors(userChoice, opponentPick(opponentChoice)) === 'tie') {
         totalPlaysResults++;
+
         totalDrawsResults++;
+
         totalPlaysDisplay.textContent = `Total Matches: ${totalPlaysResults}!`;
         totalWinsDisplay.textContent = `Total Victories: ${totalWinsResults}!`;
         totalLossesDisplay.textContent = `Total Defeats: ${totalLossesResults}!`;

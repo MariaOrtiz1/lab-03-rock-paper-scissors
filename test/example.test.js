@@ -15,7 +15,7 @@ test('Should return tie when both inputs are the same', (expect) => {
     //Act 
     // Call the function you're testing and set the result to a const
     const actualResultsBoulder = rockPaperScissors('Boulder', 'Boulder');
-    const actualResultsParchment = rockPaperScissors('Parchment','Parchment');
+    const actualResultsParchment = rockPaperScissors('Parchment', 'Parchment');
     const actualResultsShears = rockPaperScissors('Shears', 'Shears');
 
     //Expect
@@ -35,7 +35,7 @@ test('Should return win when player has winning choice', (expect) => {
     //Act 
     // Call the function you're testing and set the result to a const
     const actualResultsBoulder = rockPaperScissors('Boulder', 'Shears');
-    const actualResultsParchment = rockPaperScissors('Parchment','Boulder');
+    const actualResultsParchment = rockPaperScissors('Parchment', 'Boulder');
     const actualResultsShears = rockPaperScissors('Shears', 'Parchment');
 
     //Expect
