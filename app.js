@@ -8,7 +8,7 @@ const totalLossesDisplay = document.querySelector('#totalLosses');
 const totalPlaysDisplay = document.querySelector('#totalPlays');
 const totalDrawsDisplay = document.querySelector('#totalDraws');
 const resultsDisplay = document.querySelector('#results');
-
+const colorDisplay = document.querySelector('.userResults');
 // initialize state
 let totalWinsResults = 0;
 let totalPlaysResults = 0;
@@ -20,12 +20,13 @@ let totalLossesResults = 0;
 playButtonClick.addEventListener('click', () => {
     const selectedChoice = document.querySelector('input:checked');
     const userChoice = selectedChoice.value;
+    
     let opponentChoice = Math.ceil(Math.random() * 3);
     if (rockPaperScissors(userChoice, opponentPick(opponentChoice)) === 'won') {
         totalPlaysResults++;
 
         totalWinsResults++;
-
+        colorDisplay.style.backgroundColor = 'green';
         totalPlaysDisplay.textContent = `Total Matches: ${totalPlaysResults}!`;
         totalWinsDisplay.textContent = `Total Victories: ${totalWinsResults}!`;
         totalLossesDisplay.textContent = `Total Defeats: ${totalLossesResults}!`;
@@ -36,7 +37,7 @@ playButtonClick.addEventListener('click', () => {
         totalPlaysResults++;
 
         totalLossesResults++;
-
+        colorDisplay.style.backgroundColor = 'red';
         totalPlaysDisplay.textContent = `Total Matches: ${totalPlaysResults}!`;
         totalWinsDisplay.textContent = `Total Victories: ${totalWinsResults}!`;
         totalLossesDisplay.textContent = `Total Defeats: ${totalLossesResults}!`;
@@ -45,9 +46,8 @@ playButtonClick.addEventListener('click', () => {
 
     } else if (rockPaperScissors(userChoice, opponentPick(opponentChoice)) === 'tie') {
         totalPlaysResults++;
-
         totalDrawsResults++;
-
+        colorDisplay.style.backgroundColor = 'blue';
         totalPlaysDisplay.textContent = `Total Matches: ${totalPlaysResults}!`;
         totalWinsDisplay.textContent = `Total Victories: ${totalWinsResults}!`;
         totalLossesDisplay.textContent = `Total Defeats: ${totalLossesResults}!`;
