@@ -9,6 +9,7 @@ const totalPlaysDisplay = document.querySelector('#totalPlays');
 const totalDrawsDisplay = document.querySelector('#totalDraws');
 const resultsDisplay = document.querySelector('#results');
 const colorDisplay = document.querySelector('.userResults');
+const resetButtonClick = document.querySelector('#resetButton');
 // initialize state
 let totalWinsResults = 0;
 let totalPlaysResults = 0;
@@ -20,7 +21,7 @@ let totalLossesResults = 0;
 playButtonClick.addEventListener('click', () => {
     const selectedChoice = document.querySelector('input:checked');
     const userChoice = selectedChoice.value;
-    
+    resetButtonClick.style.display = 'block';
     let opponentChoice = Math.ceil(Math.random() * 3);
     if (rockPaperScissors(userChoice, opponentPick(opponentChoice)) === 'won') {
         totalPlaysResults++;
@@ -54,6 +55,21 @@ playButtonClick.addEventListener('click', () => {
         totalDrawsDisplay.textContent = `Total Ties: ${totalDrawsResults}!`;
         resultsDisplay.textContent = `You still have a chance to win! Give it another shot!`;
     }
+});
+
+resetButtonClick.addEventListener('click', () => {
+    totalWinsResults = 0;
+    totalPlaysResults = 0;
+    totalDrawsResults = 0; 
+    totalLossesResults = 0;
+
+    totalPlaysDisplay.textContent = '';
+    totalWinsDisplay.textContent = '';
+    totalLossesDisplay.textContent = '';
+    totalDrawsDisplay.textContent = '';
+    resultsDisplay.textContent = '';
+    colorDisplay.style.backgroundColor = '';
+    resetButtonClick.style.display = 'none';
 });
   // get user input
   // use user input to update state 
